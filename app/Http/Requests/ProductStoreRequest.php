@@ -39,6 +39,9 @@ class ProductStoreRequest extends FormRequest
             'selling_price' => 'nullable',
              'stock' => 'nullable',
             'status'              => 'required|in:published,draft',
+            'is_featured'           => 'boolean',
+            'is_new_arrival'           => 'boolean',
+            'is_best_seller'           => 'boolean',
             'is_active'           => 'boolean',
             'main_image'          => 'nullable|image|max:2048',
         ];

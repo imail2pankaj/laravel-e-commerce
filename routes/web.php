@@ -12,12 +12,15 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\VariantInventoryController;
+use App\Http\Controllers\Frontend\IndexController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+
+// ---------------------------------------------------Admin Panel Routes-----------------------------------------------
 
 // LOGIN ROUTES (only for guests)
 Route::middleware('guest:admin')->group(function () {
@@ -121,3 +124,7 @@ Route::middleware(['auth.admin', 'set.admin.guard'])->prefix('admin')->group(fun
 
 
 });
+
+// ____________________________________________________________Frontend Routes______________________________________________________________________
+
+Route::get('/',[IndexController::class,'index'])->name('index');

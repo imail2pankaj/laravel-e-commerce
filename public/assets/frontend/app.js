@@ -1,4 +1,4 @@
-import '../css/app.css';
+
 
 // Mobile Menu Logic
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,10 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Optional: Cart counter interaction (demo)
+    // Optional: Cart counter interaction (simple demo)
     const cartBadges = document.querySelectorAll('.cart-badge');
     let cartCount = 0;
 
+    // Add to cart buttons
     const addButtons = document.querySelectorAll('button');
     addButtons.forEach(btn => {
         if (btn.textContent.includes('Add to Cart') || btn.textContent.includes('Shop Now')) {
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cartCount++;
                 cartBadges.forEach(badge => badge.textContent = cartCount);
 
+                // Visual feedback
                 const originalText = btn.innerHTML;
                 btn.innerHTML = 'Added!';
                 setTimeout(() => {
@@ -47,4 +49,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Electra app initialized');
 });
-

@@ -180,8 +180,6 @@
                                         </div>
 
 
-                                
-
                                     </div>
                                 </div>
 
@@ -273,8 +271,8 @@
                                             </select>
                                         </div>
 
-
-                                        <h6 class="mb-3">Publish</h6>
+                                        <hr>
+                                        <h6 class="mb-3">Status & Tags</h6>
 
                                         <!-- Status -->
                                         <div class="mb-3">
@@ -300,7 +298,7 @@
                                         </div>
 
                                              <!-- Is Active -->
-                                        <div class="form-check mt-4">
+                                        {{-- <div class="form-check mt-4">
                                             <input type="hidden" name="is_active" value="0">
 
                                             <input type="checkbox"
@@ -310,7 +308,53 @@
                                                 {{ isset($product) && $product->is_active ? 'checked' : '' }}>
 
                                             <label class="form-check-label">Is Active</label>
+                                        </div> --}}
+
+                                        <hr>
+                                        <h6 class="mb-3">Product Highlights</h6>
+
+                                        <!-- Is Featured -->
+                                        <div class="form-check mt-4">
+                                            <input type="hidden" name="is_featured" value="0">
+
+                                            <input type="checkbox"
+                                                class="form-check-input"
+                                                name="is_featured",
+                                                id="is_featured"
+                                                value="1"
+                                                {{ isset($product) && $product->is_featured ? 'checked' : '' }}>
+
+                                            <label for="is_featured" class="form-check-label">Is featured</label>
                                         </div>
+
+                                        <!-- Is is_new_arrival -->
+                                        <div class="form-check mt-4">
+                                            <input type="hidden" name="is_new_arrival" value="0">
+
+                                            <input type="checkbox"
+                                                class="form-check-input"
+                                                name="is_new_arrival"
+                                                value="1"
+                                                id="is_new_arrival"
+                                                {{ isset($product) && $product->is_new_arrival ? 'checked' : '' }}>
+
+                                            <label for="is_new_arrival"  class="form-check-label">Is New Arrival</label>
+                                        </div>
+
+                                        <!-- Is is_best_seller -->
+                                        <div class="form-check mt-4">
+                                            <input type="hidden" name="is_best_seller" value="0">
+
+                                            <input type="checkbox"
+                                                class="form-check-input"
+                                                name="is_best_seller"
+                                                id="is_best_seller"
+                                                value="1"
+                                                {{ isset($product) && $product->is_best_seller ? 'checked' : '' }}>
+
+                                            <label for="is_best_seller" class="form-check-label">Is Best Seller</label>
+                                        </div>
+                                      
 
                                     </div>
                                 </div>
